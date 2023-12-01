@@ -14,4 +14,4 @@ const total = input.split("\n").reduce((acc, line) => {
     return acc + +(line[0] + line[line.length - 1]);
 }, 0);
 
-console.log(total); // 55108
+console.log(total);
