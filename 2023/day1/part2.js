@@ -9,8 +9,6 @@ abcone2threexyz
 xtwone3four
 4nineeightseven2
 zoneight234
-7pqrstsixteen`;
-const input = fs.readFileSync("./input.txt", "utf-8"); // https://adventofcode.com/2023/day/1/input
 7pqrstsixteen`.split(/\r?\n/g);
 const input = fs.readFileSync("./input.txt", "utf-8").split(/\r?\n/g);
 const validNums = [ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ];
