@@ -11,9 +11,11 @@ xtwone3four
 zoneight234
 7pqrstsixteen`;
 const input = fs.readFileSync("./input.txt", "utf-8"); // https://adventofcode.com/2023/day/1/input
+7pqrstsixteen`.split(/\r?\n/g);
+const input = fs.readFileSync("./input.txt", "utf-8").split(/\r?\n/g);
 const validNums = [ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ];
 
-const total = input.split("\n").reduce((acc, line) => {
+const total = input.reduce((acc, line) => {
     let num1, num2;
 
     for (let i = 0; i < line.length; i++) {
