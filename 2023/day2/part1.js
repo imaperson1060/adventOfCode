@@ -20,7 +20,6 @@ input.forEach((line, i) => {
                 ((cube.color == "red" && cube.amount > 12) ||
                 (cube.color == "green" && cube.amount > 13) ||
                 (cube.color == "blue" && cube.amount > 14))) impossible.push(i + 1);
-            else if (cube.amount > 11) console.log(i, cube);
         });
     });
 });
