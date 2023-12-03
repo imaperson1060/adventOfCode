@@ -1,16 +1,7 @@
 // https://adventofcode.com/2023/day/1
 // imaperson1060
 
-const fs = require("fs");
-
-const testInput = `two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen`.split(/\r?\n/g);
-const input = fs.readFileSync("./input.txt", "utf-8").split(/\r?\n/g);
+const input = require("fs").readFileSync("./input.txt", "utf-8").split(/\r?\n/g);
 const validNums = [ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ];
 
 const total = input.reduce((acc, line) => {
