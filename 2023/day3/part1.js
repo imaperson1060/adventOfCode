@@ -11,14 +11,14 @@ grid.forEach((row, rowIndex) => {
 
         let coordinatesList = [];
 
-        if (!isNaN(grid[rowIndex - 1][cellIndex - 1])) coordinatesList.push([ rowIndex - 1, cellIndex - 1 ]); // Top left
-        if (!isNaN(grid[rowIndex - 1][cellIndex])) coordinatesList.push([ rowIndex - 1, cellIndex ]); // Top center
-        if (!isNaN(grid[rowIndex - 1][cellIndex + 1])) coordinatesList.push([ rowIndex - 1, cellIndex + 1 ]); // Top right
+        if (rowIndex > 0 && !isNaN(grid[rowIndex - 1][cellIndex - 1])) coordinatesList.push([ rowIndex - 1, cellIndex - 1 ]); // Top left
+        if (rowIndex > 0 && !isNaN(grid[rowIndex - 1][cellIndex])) coordinatesList.push([ rowIndex - 1, cellIndex ]); // Top center
+        if (rowIndex > 0 && !isNaN(grid[rowIndex - 1][cellIndex + 1])) coordinatesList.push([ rowIndex - 1, cellIndex + 1 ]); // Top right
         if (!isNaN(grid[rowIndex][cellIndex - 1])) coordinatesList.push([ rowIndex, cellIndex - 1 ]); // Left
         if (!isNaN(grid[rowIndex][cellIndex + 1])) coordinatesList.push([ rowIndex, cellIndex + 1 ]); // Right
-        if (!isNaN(grid[rowIndex + 1][cellIndex - 1])) coordinatesList.push([ rowIndex + 1, cellIndex - 1 ]); // Bottom left
-        if (!isNaN(grid[rowIndex + 1][cellIndex])) coordinatesList.push([ rowIndex + 1, cellIndex ]); // Bottom
-        if (!isNaN(grid[rowIndex + 1][cellIndex + 1])) coordinatesList.push([ rowIndex + 1, cellIndex + 1 ]); // Bottom right
+        if (rowIndex < row.length - 1 && !isNaN(grid[rowIndex + 1][cellIndex - 1])) coordinatesList.push([ rowIndex + 1, cellIndex - 1 ]); // Bottom left
+        if (rowIndex < row.length - 1 && !isNaN(grid[rowIndex + 1][cellIndex])) coordinatesList.push([ rowIndex + 1, cellIndex ]); // Bottom
+        if (rowIndex < row.length - 1 && !isNaN(grid[rowIndex + 1][cellIndex + 1])) coordinatesList.push([ rowIndex + 1, cellIndex + 1 ]); // Bottom right
 
         coordinatesList.forEach(coordinates => {
             let number = [];
