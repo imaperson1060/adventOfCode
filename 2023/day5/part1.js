@@ -9,8 +9,7 @@ let mode = "";
 
 input.filter(x => x).forEach(line => {
     if (line.startsWith("seeds:")) return seeds = line.replace("seeds: ", "").split(" ").filter(x => !isNaN(x)).map(x => parseInt(x));
-
-    if (line.indexOf("map") != -1) mode = line.replace(" map:", "");
+    if (line.indexOf("map") != -1) return mode = line.replace(" map:", "");
 
     const [ dest, source, range ] = line.split(" ").filter(x => !isNaN(x)).map(x => parseInt(x));
     return maps[mode].push({ dest, source, range });
