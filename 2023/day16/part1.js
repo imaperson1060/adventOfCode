@@ -5,8 +5,7 @@ const input = require("fs").readFileSync("./input.txt", "utf-8").split(/\r?\n/g)
 
 let map = Array.from({ length: input.length }, () => Array.from({ length: input[0].length }, () => "."));
 let history = [];
-let current = [ [ 0, 0, 0, 1 ] ];
-if (input[0][0] == "|" || input[0][0] == "\\") current[0] = [ 0, 0, 1, 0 ];
+let current = [ [ 0, -1, 0, 1 ] ];
 while (current.length) {
     let next = [];
     for (let i = 0; i < current.length; i++) {
@@ -32,7 +31,6 @@ while (current.length) {
                 if (!deltaX) next.push([ y + deltaY, x + deltaX, 0, -1 ]);
                 break;
         }
-        map[y][x] = "#";
         map[y + deltaY][x + deltaX] = "#";
     }
 
