@@ -1,0 +1,18 @@
+How to clear out all inputs from a repo (since that's like copyright infringement or smth)
+
+1. Remove commit that only changes input.txt (there's only one so I did it manually)
+	- git clone [repo]
+	- git rebase -i [the hash before the commit you want to remove] --committer-date-is-author-date
+		- drop the commit that only changes input.txt in the editor (should be the lowest one on the list)
+	- git push -f
+
+2. Clean the rest of the repo
+	- git clone [repo] --mirror "[directory]"
+	- java -jar bfg-1.14.0.jar --delete-files input.txt --no-blob-protection "[directory]"
+	- cd "[directory]"
+	- git reflog expire --expire=now --all && git gc --prune=now --aggressive
+	- git push -f
+
+Note: To check repo, copy the bare folder over to replace the .git folder of a freshly cloned repo. Then change the `bare` variable to false in the `config` file, and open it in a Git GUI. There should be no input.txt files in the commits.
+
+REMEMBER TO ADD A .GITIGNORE
