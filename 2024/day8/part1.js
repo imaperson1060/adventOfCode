@@ -18,11 +18,12 @@ for (let i = 0; i < input.length; i++) {
         }
 
         indicies.forEach(index => {
-            let rise = (index[0] - i) * 2,
-                run = (index[1] - j) * 2;
+            let rise = index[0] - i,
+                run = index[1] - j,
+                m = 2;
             if (rise == 0 && run == 0) return;
 
-            if (i + rise >= 0 && i + rise < input.length && j + run >= 0 && j + run < input[0].length) antinodes.push([ i + rise, j + run ]);
+            if (i + rise * m >= 0 && i + rise * m < input.length && j + run * m >= 0 && j + run * m < input[0].length) antinodes.push([ i + rise * m, j + run * m ]);
         });
     }
 }
