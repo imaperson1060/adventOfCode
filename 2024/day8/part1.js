@@ -9,15 +9,15 @@ for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < input[i].length; j++) {
         if (input[i][j] == ".") continue;
 
-        let indicies = [];
+        let indices = [];
         for (let k = 0; k < input.length; k++) {
-            let rowIndicies = [];
-            while (input[k].indexOf(input[i][j], rowIndicies.at(-1) ? rowIndicies.at(-1)[1] + 1 : undefined) != -1)
-                rowIndicies.push([ k, input[k].indexOf(input[i][j], rowIndicies.at(-1) ? rowIndicies.at(-1)[1] + 1 : undefined) ]);
-            indicies.push(...rowIndicies);
+            let rowIndices = [];
+            while (input[k].indexOf(input[i][j], rowIndices.at(-1) ? rowIndices.at(-1)[1] + 1 : undefined) != -1)
+                rowIndices.push([ k, input[k].indexOf(input[i][j], rowIndices.at(-1) ? rowIndices.at(-1)[1] + 1 : undefined) ]);
+            indices.push(...rowIndices);
         }
 
-        indicies.forEach(index => {
+        indices.forEach(index => {
             let rise = index[0] - i,
                 run = index[1] - j,
                 m = 2;
