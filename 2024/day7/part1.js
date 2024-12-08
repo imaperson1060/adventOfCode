@@ -20,8 +20,7 @@ let operations = input.map(line => {
     for (let i = 0; i < 2 ** (nums.length - 1); i++) {
         if (ops[0] == "+") ops[0] = "*";
         else {
-            ops[0] = "+";
-            let next = 1;
+            let next = 0;
             while (ops[next] == "*") ops[next++] = "+";
             ops[next] = "*";
         }

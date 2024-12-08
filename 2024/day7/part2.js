@@ -21,8 +21,7 @@ let operations = input.map(line => {
         if (ops[0] == "+") ops[0] = "*";
         else if (ops[0] == "*") ops[0] = "||";
         else {
-            ops[0] = "+";
-            let next = 1;
+            let next = 0;
             while (ops[next] == "||") ops[next++] = "+";
             if (ops[next] == "+") ops[next] = "*";
             else ops[next] = "||";
