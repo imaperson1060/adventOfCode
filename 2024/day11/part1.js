@@ -3,6 +3,7 @@
 
 const input = require("fs").readFileSync("./input.txt", "utf-8").split(" ").map(x => +x);
 
+// yes, i know this is actually slower than my part 2, but this is how i got the first star so i'm leaving it like this
 let stones = input;
 for (let i = 0; i < 25; i++) {
     for (let j = 0; j < stones.length; j++) {
